@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_medical_ui/widgets/doctor_item.dart';
 import 'package:flutter_medical_ui/widgets/specialist_item.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -22,25 +23,25 @@ class _HomePageState extends State<HomePage> {
           BottomNavigationBarItem(
               icon: Icon(
                 FontAwesomeIcons.houseUser,
-                color: Color.fromARGB(255, 181, 128, 193),
+                color: Color.fromARGB(215, 160, 160, 160),
               ),
               label: ''),
           BottomNavigationBarItem(
               icon: Icon(
                 FontAwesomeIcons.solidCalendarDays,
-                color: Color.fromARGB(255, 181, 128, 193),
+                color: Color.fromARGB(215, 160, 160, 160),
               ),
               label: ''),
           BottomNavigationBarItem(
               icon: Icon(
                 FontAwesomeIcons.solidComment,
-                color: Color.fromARGB(255, 181, 128, 193),
+                color: Color.fromARGB(215, 160, 160, 160),
               ),
               label: ''),
           BottomNavigationBarItem(
               icon: Icon(
                 FontAwesomeIcons.solidBell,
-                color: Color.fromARGB(255, 181, 128, 193),
+                color: Color.fromARGB(215, 160, 160, 160),
               ),
               label: ''),
         ],
@@ -196,6 +197,53 @@ class _HomePageState extends State<HomePage> {
                       imageName: "Physiologist",
                     ),
                     const SizedBox(width: 8),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 20.0),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Text(
+                    "Doctor List",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16.0,
+                    ),
+                  ),
+                  Text(
+                    "See all",
+                    style: TextStyle(color: Colors.black45, fontSize: 16.0),
+                  )
+                ],
+              ),
+              const SizedBox(height: 20.0),
+              SizedBox(
+                height: 200,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: const [
+                    DoctorItem(
+                        image: "assets/1.png",
+                        name: "Nycta Gina",
+                        specialist: "Pediatrician"),
+                    const SizedBox(width: 8.0),
+                    DoctorItem(
+                        image: "assets/3.png",
+                        name: "Reisa Broto Asmoro",
+                        specialist: "Surgeon"),
+                    const SizedBox(width: 8.0),
+                    DoctorItem(
+                        image: "assets/2.png",
+                        name: "Indah KusumaNingrum",
+                        specialist: "Odontologist"),
+                    const SizedBox(width: 8.0),
+                    DoctorItem(
+                        image: "assets/4.png",
+                        name: "Mesty Ariotedjo",
+                        specialist: "Ophtamologist"),
+                    const SizedBox(width: 8.0),
                   ],
                 ),
               )
